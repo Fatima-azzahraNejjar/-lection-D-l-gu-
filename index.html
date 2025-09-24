@@ -22,28 +22,43 @@
     }
 
     header h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       margin-bottom: 0.5rem;
-      color: #3a86ff; /* bleu moderne */
+      color: #3a86ff;
     }
 
     header p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: #555;
     }
 
-div.polaroid {
-  width: 20%;
-  background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin-bottom: 25px;
-  justify-content: space-between;
-}
+    .candidats {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;   /* permet de passer à la ligne sur petit écran */
+      gap: 2rem;
+      margin-top: 2rem;
+    }
 
-div.container {
-  text-align: center;
-  padding: 10px 20px;
-}
+    .polaroid {
+      flex: 1 1 250px; /* largeur minimum 250px, puis s’adapte */
+      max-width: 300px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 6px 20px rgba(0,0,0,0.19);
+      border-radius: 8px;
+    }
+
+    .polaroid img {
+      width: 100%;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+    .container {
+      text-align: center;
+      padding: 10px 20px;
+    }
+
     nav {
       display: flex;
       justify-content: center;
@@ -64,7 +79,7 @@ div.container {
     }
 
     nav a:hover {
-      color: #ff006e; /* accent corail */
+      color: #ff006e;
     }
 
     section {
@@ -80,7 +95,7 @@ div.container {
       color: #3a86ff;
       margin-bottom: 1rem;
       font-size: 2rem;
-      border-left: 4px solid #ff006e; /* accent */
+      border-left: 4px solid #ff006e;
       padding-left: 10px;
     }
 
@@ -108,6 +123,13 @@ div.container {
       margin-top: 3rem;
       color: #555;
     }
+
+    /* --- Responsive --- */
+    @media (max-width: 600px) {
+      header h1 { font-size: 2rem; }
+      header p { font-size: 1rem; }
+      .candidats { gap: 1rem; }
+    }
   </style>
 </head>
 <body>
@@ -117,25 +139,21 @@ div.container {
     <p><strong>Amine</strong> candidat & <strong>Fati</strong> suppléante</p>
     <p>"Une classe soudée et ambitieuse"</p>
 
+    <div class="candidats">
+      <div class="polaroid">
+        <img src="Fati.jpg" alt="Fati">
+        <div class="container">
+          <p>Fatima-azzahra Nejjar</p>
+        </div>
+      </div>
 
-<div style="display:flex; justify-content:center; gap:100px; margin-top:20px;">
-  <div class="polaroid">
-    <img src="Fati.jpg" alt="Fati" style="width:100%">
-    <div class="container">
-      <p>Fatima-azzahra Nejjar</p>
+      <div class="polaroid">
+        <img src="Amine.png" alt="Amine">
+        <div class="container">
+          <p>Amine hammouda</p>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <div class="polaroid">
-    <img src="Amine.png" alt="Amine" style="width:100%">
-    <div class="container">
-      <p>Amine hammouda</p>
-    </div>
-  </div>
-</div>
-
-</div>
-
   </header>
 
   <nav>
@@ -161,7 +179,7 @@ div.container {
 
   <section id="club-ia">
     <h2>🌐 Le Club IA</h2>
-    <p>Nous avons engager un Club Intelligence Artificielle : un espace pour découvrir, créer et s’amuser avec la technologie.</p>
+    <p>Nous avons engagé un Club Intelligence Artificielle : un espace pour découvrir, créer et s’amuser avec la technologie.</p>
     <ul>
       <li>Ateliers d’introduction à l’IA</li>
       <li>Projets créatifs : chatbots, mini-jeux, images générées</li>
@@ -169,13 +187,9 @@ div.container {
     </ul>
   </section>
 
-
   <footer>
     © 2025 - Campagne Amine & Fati | Une classe motivée et connectée
   </footer>
 
 </body>
 </html>
-
-
-
